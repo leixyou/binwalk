@@ -90,7 +90,7 @@ function install_unstuff
 {
     mkdir -p /tmp/unstuff
     cd /tmp/unstuff
-    wget -O - http://my.smithmicro.com/downloads/files/stuffit520.611linux-i386.tar.gz | tar -zxv
+    wget -O - http://my.smithmicro.com/downloads/files/stuffit520.611linux-i386.tar.gz --no-check-certificate| tar -zxv
     $SUDO cp bin/unstuff /usr/local/bin/
     cd -
     rm -rf /tmp/unstuff
@@ -103,7 +103,7 @@ function install_cramfstools
   INSTALL_LOCATION=/usr/local/bin
 
   # https://github.com/torvalds/linux/blob/master/fs/cramfs/README#L106
-  wget  https://downloads.sourceforge.net/project/cramfs/cramfs/1.1/cramfs-1.1.tar.gz?ts=$TIME -O cramfs-1.1.tar.gz
+  wget  https://downloads.sourceforge.net/project/cramfs/cramfs/1.1/cramfs-1.1.tar.gz?ts=$TIME --no-check-certificate -O cramfs-1.1.tar.gz
   tar xf cramfs-1.1.tar.gz
   # There is no "make install"
   (cd cramfs-1.1 \
